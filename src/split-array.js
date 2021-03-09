@@ -11,10 +11,10 @@ export function splitArray(sourceArray, numSubArrays) {
     if (isParamsInvalid(numSubArrays)) {
         throw new Error('Number of sub arrays must be greater than zero');
     }
-    var subArrayMaxLength = Math.ceil(sourceArray.length / numSubArrays);
+    var subArrayMaxLength = Math.ceil(sourceArray.length / numSubArrays); //?
     var targetArray = [];
-    for (var i = 0; i < subArrayMaxLength; i++) {
-        targetArray.push(sourceArray.slice(i * numSubArrays, (i + 1) * numSubArrays));
+    for (var i = 0; i < numSubArrays; i++) {
+        targetArray.push(sourceArray.slice(i * subArrayMaxLength, (i + 1) * subArrayMaxLength));
     }
     return targetArray;
 }

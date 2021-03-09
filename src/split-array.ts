@@ -9,7 +9,7 @@
  */
 
 export function splitArray(sourceArray: any[], numSubArrays: number) {
-
+ 
   if (isParamsInvalid(numSubArrays)) {
     throw new Error('Number of sub arrays must be greater than zero');
   }
@@ -18,8 +18,8 @@ export function splitArray(sourceArray: any[], numSubArrays: number) {
 
   const targetArray = [];
 
-  for (var i = 0; i < subArrayMaxLength; i++) {
-    targetArray.push(sourceArray.slice(i * numSubArrays, (i + 1) * numSubArrays));
+  for (var i = 0; i < numSubArrays; i++) {
+    targetArray.push(sourceArray.slice(i * subArrayMaxLength, (i + 1) * subArrayMaxLength));
   }
 
   return targetArray;
@@ -27,11 +27,10 @@ export function splitArray(sourceArray: any[], numSubArrays: number) {
 
 /**
  * Test parameters for splitArray
- * @param numSubArrays 
- * @returns 
+ * @param numSubArrays
+ * @returns
  */
 const isParamsInvalid = (numSubArrays: number) => {
-  const inValidSize = numSubArrays !> 0;
+  const inValidSize = numSubArrays! <= 0;
   return inValidSize;
 };
-
