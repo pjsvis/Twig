@@ -1,0 +1,23 @@
+{
+  "name": "twig",
+  "version": "1.0.0",
+  "description": "Twig Coding Challenge",
+  "main": "/src/main.js",
+  "module": "/src/main.js",
+  "scripts": {
+    "test": "mocha --require esm"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.3",
+    "esm": "^3.2.25",
+    "mocha": "^8.3.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {},
+  "keywords": [],
+  "directories": {
+    "test": "test"
+  }
+}
