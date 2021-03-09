@@ -18,28 +18,42 @@ describe('Split Array content tests', () => {
   });
 
   it('should split alpha source array into 3 sub arrays', () => {
-    const targetArray = splitArray(numArray, 3);
+    const targetArray = splitArray(alphaArray, 3);
     expect(targetArray.length).to.equal(3);
   });
 
   it('should split mixed source array into 3 sub arrays', () => {
-    const targetArray = splitArray(numArray, 3);
+    const targetArray = splitArray(mixedArray, 3);
     expect(targetArray.length).to.equal(3);
   });
+
+  it('should split an empty source array into 3 sub arrays of nested arrays', () => {
+    const targetArray = splitArray(emptyArray, 3);
+    expect(targetArray.length).to.equal(3);
+  });
+
+  it('should split a nested source array into 3 sub arrays', () => {
+    const targetArray = splitArray(nestedArray, 3);
+    expect(targetArray.length).to.equal(3);
+  });
+
+
 });
 
 describe('Split Array size tests', () => {
-  it('should throw exception if number of sub arrays is 0', () => {
+  it('should throw an exception if number of sub arrays is 0', () => {
     expect(function () {
       splitArray(numArray, 0);
     }).to.throw('Number of sub arrays must be greater than zero');
   });
 
-  it('should throw exception if number of sub arrays is < 0', () => {
+  it('should throw an exception if number of sub arrays is < 0', () => {
     expect(function () {
       splitArray(numArray, -1);
     }).to.throw('Number of sub arrays must be greater than zero');
   });
+
+
 
   it('should create empty arrays if the source array length is less than the number of sub arrays', () => {
     const targetArray = splitArray(smallArray, 5);
