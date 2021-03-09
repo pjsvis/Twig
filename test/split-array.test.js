@@ -36,8 +36,6 @@ describe('Split Array content tests', () => {
     const targetArray = splitArray(nestedArray, 3);
     expect(targetArray.length).to.equal(3);
   });
-
-
 });
 
 describe('Split Array size tests', () => {
@@ -52,8 +50,6 @@ describe('Split Array size tests', () => {
       splitArray(numArray, -1);
     }).to.throw('Number of sub arrays must be greater than zero');
   });
-
-
 
   it('should create empty arrays if the source array length is less than the number of sub arrays', () => {
     const targetArray = splitArray(smallArray, 5);
